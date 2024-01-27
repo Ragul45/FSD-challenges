@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Difference Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    form{
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+        border-radius: 5px;
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        padding: 30px;
+    }
+    .container {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    h1{
+        color: blueviolet;
+    }
+    label{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    label input {
+        display: block;
+        margin-bottom: 10px;
+        border: 2px solid white;
+        border-radius: 3px;
+        padding: 10px;
+        color: black;
+        font-size: 15px;
+    }
+    button {
+        border: 2px solid blueviolet;
+        color: black;
+        border-radius: 5px;
+        padding: 4px;
+        margin-left: 7px;
+        margin-bottom: 10px;
+        background-color: blueviolet;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    #result {
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid  lightskyblue;
+        color: black;
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+    }
+</style>
+<body>
+    <form>
+    <div class="container">
+        <h1>Time Difference</h1>
+        <label for="time1">Time 1:</label>
+        <input type="time" id="time1">
+        <br>
+        <label for="time2">Time 2:</label>
+        <input type="time" id="time2">
+        <br>
+        <br>
+        <br>
+        <button onclick="calculateTimeDifference()">Calculate</button>
+        <div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</form>
+</body>
+<script>
+    function calculateTimeDifference() {
+    const time1 = document.getElementById("time1").value;
+    const time2 = document.getElementById("time2").value;
+
+    if (time1 && time2) {
+        const date1 = new Date(`2000-01-01T${time1}`);
+        const date2 = new Date(`2000-01-01T${time2}`);
+
+        const timeDiff = Math.abs(date1 - date2);
+
+        const hours = Math.floor(timeDiff / 3600000);
+        const minutes = Math.floor((timeDiff % 3600000) / 60000);
+
+        document.getElementById("result").innerHTML = `Time difference: ${hours} hours and ${minutes} minutes`;
+    } else {
+        document.getElementById("result").innerHTML = "Please enter both times.";
+    }
+}
+</script>
+</html>

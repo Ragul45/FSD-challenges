@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right top,pink, blue,violet);
+        min-height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;       
+    }
+    .pink{
+        height: 400px;
+        width: 450px;
+        background-color: #fcc2d7;
+        border-radius: 10px;
+        border: 1px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    #weight {
+            width: 150px;
+            height: 20px;
+          }
+    #height {
+            width: 150px;
+            height: 20px;
+          }
+    #btn{
+        background-color: #c92a2a;
+        border: 1px solid black;
+        width: 160px;
+        height: 30px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    #result {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid  black;
+        color: black;
+        background-color:  white;
+    } 
+</style>
+<body>
+    <div class="pink">
+        <h1>Body Mass Index</h1>
+        <h2>Weight</h2>
+        <input type="text" id="weight">
+        <h2>Height</h2>
+        <input type="text"id="height">
+        <br>
+        <button onclick="calculateBMI()">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+    function calculateBMI(){
+        let weight=Number(document.getElementById("weight").value);
+        let height=Number(document.getElementById("height").value);
+        let BMI=weight/(height*height);
+        document.getElementById("result").innerHTML=BMI;
+        }
+    </script>
+</body>
+</html>

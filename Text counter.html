@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #form{
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+        border-radius: 5px;
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        padding: 30px;
+    }
+    h1{
+        color: blueviolet;
+    }
+    .frameWork{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    .frameWork input{
+        border: 2px solid black;
+        border-radius: 3px;
+        padding: 70px;
+        color: black;
+        font-size: 15px;
+    }
+    #result {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid  lightskyblue;
+        color: black;
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+        } 
+</style>
+<body>
+    <form action="" id="form">
+        <h1><center>Enter Text to Count</center></h1>
+        <div class="frameWork">
+            <input type="text" placeholder="Type here something....." id="my-text">
+        </div>
+        <div>
+            <p id="result"></p>        
+        </div>
+    </form>
+    <script>
+        let myText = document. getElementById("my-text");
+        myText. addEventListener("input", () => {
+            let count = (myText. value). length;
+            document. getElementById("result"). textContent = `Total characters: ${count}`.innerHTML=count;
+        });
+    </script>
+</body>
+</html>

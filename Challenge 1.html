@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body{
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    margin: 2em;
+    border-radius: 2em;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+body{
+    align-items: center;
+    text-align: center;
+}
+input{
+    width: 15em;
+    height: 2em;
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+}
+button{
+    width: 7em;
+    height: 1.6em;
+    border-radius: 0.79em;
+    border: none;
+    font-size: large;
+    transition: background-color 500ms;
+    transition: color 500ms;
+    background-color: gainsboro;
+}
+button:hover{
+    background-color: blue;
+    color:  white;
+    transition: background-color 500ms;
+    transition: color 500ms;
+}
+</style>
+<body>
+    <h2>Bmi calculations </h2>
+    <div class="body">
+        <label for="markHeight">Mark's Height</label>
+    <input id="markHeight" type="number">
+
+    <label for="markWeight">Mark's Weight</label>
+    <input id="markWeight" type="number">
+
+    <label for="johnHeight">John's Height</label>
+    <input id="johnHeight" type="number">
+
+    <label for="johnWeight">John's Weight</label>
+    <input id="johnWeight" type="number">
+
+    <button onclick='calculate()'>Calculate</button>
+    <div id="output"></div>
+    </div>
+
+</body>
+<script>
+    var MarkHeight=1.69
+var MarkWeight=78
+
+var JohnHeight=1.95
+var JohnWeight=92
+
+var markHigherBMI
+
+function BMI(Height,Weight) {
+    let BMI=Weight/Height**2
+    return BMI
+}
+
+var MarkBMI=BMI(MarkHeight,MarkWeight).toFixed(2)
+var JohnBMI=BMI(JohnHeight,JohnWeight).toFixed(2)
+
+function isMarkHigherBMI(MarksBMI,JohnsBMI){
+    if(MarksBMI>JohnsBMI) markHigherBMI=true
+    else markHigherBMI=false
+    console.log(markHigherBMI)
+}
+isMarkHigherBMI(MarkBMI,JohnBMI)
+</script>
+</html>

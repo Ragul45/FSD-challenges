@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+        border-radius: 5px;
+        padding: 30px;
+    }
+    h1 {
+       text-align: center;
+       color: blueviolet;
+    }
+    input{
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-top: 5px;
+        width: 380px;
+    }
+    button{
+        padding:8px;
+        background-color: blueviolet;
+        color: black;
+        font-size: 15px;
+        margin-top: 5px;
+        border: 2px solid blueviolet;
+        border-radius: 10px;
+        margin-left: 160px;
+    }
+    #result{
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid  lightskyblue;
+        color: black;
+        background-color: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+    }
+</style>
+<body>
+    <form>
+        <h1>FD Calculator</h1>
+        <label>Principal Amount(₹)</label><br>
+        <input type="text" id="principalAmount" placeholder="Enter the principal amount" />
+        <br>
+        <br>
+        <label>Interest Rate(%)</label><br>
+        <input type="text" id="interestRate" placeholder="Enter the Interest rate" />
+        <br>
+        <br>
+        <label>Time(Months)</label><br>
+        <input type="text" id="timeMonths" placeholder="Enter the Time months" />
+        <br>
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <br>
+        <br>
+        <p id="result"></p>
+    </form>
+    <script>
+        function calculate() {
+            const principalAmount = Number(document.getElementById("principalAmount").value);
+            const interestRate = Number(document.getElementById("interestRate").value);
+            const timeMonths = Number(document.getElementById("timeMonths").value);
+            const rate = interestRate / 100 / 12;
+            const t = timeMonths;
+            const rdAmount = principalAmount * t * (t + 1) / 2 * rate + principalAmount;
+            let rdAmountRounded = Math.trunc(rdAmount);
+            document.getElementById("result").textContent = "Your FD is ₹" + rdAmountRounded;
+        }
+    </script>
+    
+</body>
+</html>

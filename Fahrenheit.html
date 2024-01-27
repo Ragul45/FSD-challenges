@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>conversion</title>
+        <style>
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right top,pink, blue,violet);
+            min-height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          }
+          .container {
+            background-color: #ffdeeb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40rem;
+            height: 25rem;
+            box-sizing: border-box;
+            border-radius: 20px;
+            border: 2px solid black;
+          }
+          h1,
+          h2 {
+            color: black;
+          }
+          #btn {
+            background-color:#dee2e6 ;
+            border: 1px solid black;
+            width: 160px;
+            height: 46px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 18px;
+          }
+          #input {
+            width: 270px;
+            height: 30px;
+            padding: 3px;
+          }
+          #result {
+            width: 150px;
+            height: 30px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid  black;
+            color: white;
+            background-color: #ff6b6b ;
+          }
+        </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>Farenheit Conversion</h1>
+            <h2>Celsius to Farenheit Conversion</h2>
+              <input type="text" id="input" />
+              <br />
+              <button id="btn" onclick="convert()">Convert</button>
+            <p id="result"></p>
+          </div>
+          
+        <script>
+          function convert(){
+            let Celsius=Number(document.getElementById("input").value)
+            let farhrenheit=Celsius*(9/5)+32;
+            document.getElementById("result").innerHTML=farhrenheit;
+          }
+        </script>
+        </body>
+        </html>
+       

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+  }
+    #form {
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        background: linear-gradient(to left bottom, rgb(247, 195, 203),rgb(161, 161, 194),rgb(247, 195, 203));
+        border-radius: 5px;
+        padding: 30px;
+    }
+h1 {
+  text-align: center;
+  color: blueviolet;
+}
+#form button {
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+}
+.frameWork {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.frameWork input {
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px;
+}
+.frameWork input:focus {
+  outline: 0;
+}
+.frameWork.error {
+  color: red;
+  margin-top: 5px;
+}
+.frameWork.success input {
+  border-color: green;
+}
+.frameWork .error input {
+  border-color: red;
+}
+</style>
+<body>>
+      <form action="" id="form">
+        <h1>Register</h1>
+        <div class="frameWork">
+          <label for="username">UserName </label>
+          <input type="text" id="username" name="username" />
+          <div class="error"></div>
+        </div>
+        <div class="frameWork">
+          <label for="Email">Email </label>
+          <input type="text" id="email" name="email" />
+          <div class="error"></div>
+        </div>
+        <div class="frameWork">
+          <label for="password">Password </label>
+          <input type="text" id="password" name="password" />
+          <div class="error"></div>
+        </div>
+        <div class="frameWork">
+          <label for="cpassword">Confirm Password </label>
+          <input type="text" id="cpassword" name="cpassword" />
+          <div class="error"></div>
+        </div>
+        <div>
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    <script src="register.js"></script>
+  </body>
+</html>
