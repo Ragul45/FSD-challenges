@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+    class user{
+        static nofuser=0
+        constructor(name,age,dept){
+            this.n=name;
+            this.a=age;
+            this.d=dept;
+            user.nofuser++;
+        }
+         login() {
+            console.log("Hi",this.n);
+            console.log("Your from" ,this.d,"and","your age is ",this.a);
+            
+        }
+        static var(){
+            console.log("number of user",user.nofuser)
+        }
+
+    }
+    let users=new user("Deepa",20,"IT");
+    let users1=new user("Nazriya",27,"IT")
+    user.var()
+    // console.log("number of user",user.nofuser);
+
+    users.login();
+    users1.login()
+
+// INHERITENCE
+class paiduser extends user{
+    constructor(name,age){
+    super(name,age)
+    this.storage=100
+    }
+    mess(){
+        console.log("You have a 100gb")
+    }
+    login(){
+        console.log("here")
+    }
+} 
+let pu=new paiduser("kayal",21)
+pu.login()
+pu.mess()
+
+class temperature{
+    constructor(temp){
+        this._temp=temp;
+    }
+    get temp(){
+        return this._temp;
+    }
+    set temp(temp){
+        if(temp>100)
+           temp=100
+        this._temp=temp
+    }
+
+}
+let t=new temperature(130);
+t.temp=130;
+console.log(t.temp)
+
+
+</script> -->
+
+
+<!-- TASK -->
+<script>
+function Car(make,speed)
+{
+    this.make=make;
+    this.speed=speed;
+}
+ Car.prototype.brake=function()
+    {
+        this.speed=this.speed-5;
+        console.log(`The current speed of the ${this.make} :${this.speed} km/h`);   
+      }
+ 
+
+ Car.prototype.accelerate=function()
+{
+    this.speed=this.speed+10;
+    console.log(`Current speed of the ${this.make} :${this.speed} km/h`);
+}
+
+
+const car=new Car("BMW",120);
+let car1=new Car("Tesla",160)
+car.brake();
+car.accelerate()
+car1.brake();
+car1.accelerate()
+</script>
+
+</body>
+</html>

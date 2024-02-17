@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+
+    accelerate() {
+        this.speed += 10;
+        console.log(` the ${this.make} going at ${this.speed} km/h`);
+    }
+
+    brake() {
+        this.speed -= 5;
+        console.log(`The current speed of the ${this.make}: ${this.speed} km/h`);
+    }
+
+    get speedUS() {
+        return this.speed / 1.6; 
+    }
+
+    set speedUS(speedInMilesPerHour) {
+        this.speed = speedInMilesPerHour * 1.6; 
+    }
+}
+
+
+const car = new Car("Tesla", 120);
+
+// car.accelerate();
+// car.brake();      
+
+
+console.log(`The ${car.make} going at  ${car.speedUS} KM/h`);
+
+car.speedUS = 80;
+console.log(`The ${car.make} going at ${car.speed} KM/h`);
+
+    </script>
+</body>
+</html>
