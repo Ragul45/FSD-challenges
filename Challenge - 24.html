@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Acceleration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.car {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+</style>
+<body>
+    <div class="car">
+        <h2>BMW</h2>
+        <p>Speed: <span id="bmw-speed">120</span> km/h</p>
+        <button onclick="accelerate('bmw')">Accelerate</button>
+        <button onclick="brake('bmw')">Brake</button>
+    </div>
+
+    <div class="car">
+        <h2>Mercedes</h2>
+        <p>Speed: <span id="mercedes-speed">95</span> km/h</p>
+        <button onclick="accelerate('mercedes')">Accelerate</button>
+        <button onclick="brake('mercedes')">Brake</button>
+    </div>
+
+    <script>
+        // Define the Car constructor function
+function Car(make, speed) {
+    this.make = make;
+    this.speed = speed;
+}
+
+// Implement the accelerate method
+Car.prototype.accelerate = function() {
+    this.speed += 10;
+    return this.speed;
+}
+
+// Implement the brake method
+Car.prototype.brake = function() {
+    this.speed -= 5;
+    return this.speed;
+}
+
+// Create car objects
+const bmw = new Car('BMW', 120);
+const mercedes = new Car('Mercedes', 95);
+
+// Function to accelerate the car
+function accelerate(car) {
+    if (car === 'bmw') {
+        bmw.speed = bmw.accelerate();
+        document.getElementById('bmw-speed').textContent = bmw.speed;
+    } else if (car === 'mercedes') {
+        mercedes.speed = mercedes.accelerate();
+        document.getElementById('mercedes-speed').textContent = mercedes.speed;
+    }
+}
+
+// Function to brake the car
+function brake(car) {
+    if (car === 'bmw') {
+        bmw.speed = bmw.brake();
+        document.getElementById('bmw-speed').textContent = bmw.speed;
+    } else if (car === 'mercedes') {
+        mercedes.speed = mercedes.brake();
+        document.getElementById('mercedes-speed').textContent = mercedes.speed;
+    }
+}
+
+    </script>
+</body>
+</html>

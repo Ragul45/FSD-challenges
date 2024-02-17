@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Acceleration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.car {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+</style>
+<body>
+    <div class="car">
+        <h2>Ford</h2>
+        <p>Speed: <span id="speed-kmh">120</span> km/h</p>
+        <p>Speed (US): <span id="speed-mph">75</span> mi/h</p>
+        <button onclick="accelerate()">Accelerate</button>
+        <button onclick="brake()">Brake</button>
+        <input type="number" id="new-speed-mph" placeholder="Enter speed in mi/h">
+        <button onclick="setSpeed()">Set Speed (US)</button>
+    </div>
+
+    <script>
+        // Define the CarCl class
+class CarCl {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+
+    // Accelerate method
+    accelerate() {
+        this.speed += 10;
+        this.displaySpeed();
+    }
+
+    // Brake method
+    brake() {
+        this.speed -= 5;
+        this.displaySpeed();
+    }
+
+    // Getter for speedUS
+    get speedUS() {
+        return this.speed / 1.6;
+    }
+
+    // Setter for speedUS
+    set speedUS(speedInMilesPerHour) {
+        this.speed = speedInMilesPerHour * 1.6;
+        this.displaySpeed();
+    }
+
+    // Display speed on the webpage
+    displaySpeed() {
+        const speedKMHElement = document.getElementById('speed-kmh');
+        speedKMHElement.textContent = this.speed;
+        const speedMPHElement = document.getElementById('speed-mph');
+        speedMPHElement.textContent = this.speedUS;
+    }
+}
+
+// Create a new car instance
+const ford = new CarCl('Ford', 120);
+
+// Function to accelerate the car
+function accelerate() {
+    ford.accelerate();
+}
+
+// Function to brake the car
+function brake() {
+    ford.brake();
+}
+
+// Function to set speed in mi/h
+function setSpeed() {
+    const newSpeedMPHInput = document.getElementById('new-speed-mph').value;
+    if (newSpeedMPHInput !== '') {
+        ford.speedUS = parseFloat(newSpeedMPHInput);
+    }
+}
+
+    </script>
+</body>
+</html>

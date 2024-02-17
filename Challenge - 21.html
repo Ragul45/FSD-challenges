@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Age Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <h1>Dog Age Checker</h1>
+    <div id="output"></div>
+
+    <script>
+    // Import necessary modules
+const express = require('express');
+const app = express();
+
+// Define the port
+const PORT = process.env.PORT || 3000;
+
+// Function to check dogs
+function checkDogs(dogsJulia, dogsKate) {
+    // Your checkDogs function code here...
+}
+
+// Serve static files (HTML and CSS)
+app.use(express.static('public'));
+
+// Define routes
+app.get('/test1', (req, res) => {
+    // Test data 1
+    const dogsJulia_1 = [3, 5, 2, 12, 7];
+    const dogsKate_1 = [4, 1, 15, 8, 3];
+    const result = checkDogs(dogsJulia_1, dogsKate_1);
+    res.send(result);
+});
+
+app.get('/test2', (req, res) => {
+    // Test data 2
+    const dogsJulia_2 = [9, 16, 6, 8, 3];
+    const dogsKate_2 = [10, 5, 6, 1, 4];
+    const result = checkDogs(dogsJulia_2, dogsKate_2);
+    res.send(result);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+    </script>
+</body>
+</html>
